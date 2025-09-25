@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 const useGetAllAdminJobs = () => {
     const dispatch = useDispatch();
     const { user } = useSelector(store => store.auth);
-    useEffect(()=>{
+    useEffect(() => {
         const fetchAllAdminJobs = async () => {
             try {
                 const config = {
@@ -23,9 +23,9 @@ const useGetAllAdminJobs = () => {
             } catch (error) {
                 console.log(error);
             }
-        }
+        };
         fetchAllAdminJobs();
-    },[])
+    }, [user]);
 }
 
 export default useGetAllAdminJobs

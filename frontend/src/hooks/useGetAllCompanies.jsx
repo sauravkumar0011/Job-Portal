@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 const useGetAllCompanies = () => {
     const dispatch = useDispatch();
     const { user } = useSelector(store => store.auth);
-    useEffect(()=>{
+    useEffect(() => {
         const fetchCompanies = async () => {
             try {
                 const config = {
@@ -23,9 +23,9 @@ const useGetAllCompanies = () => {
             } catch (error) {
                 console.log(error);
             }
-        }
+        };
         fetchCompanies();
-    },[])
+    }, [user]);
 }
 
 export default useGetAllCompanies

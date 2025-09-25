@@ -8,7 +8,7 @@ const useGetAppliedJobs = () => {
     const dispatch = useDispatch();
     const { user } = useSelector(store => store.auth);
 
-    useEffect(()=>{
+    useEffect(() => {
         const fetchAppliedJobs = async () => {
             try {
                 const config = {
@@ -24,8 +24,8 @@ const useGetAppliedJobs = () => {
             } catch (error) {
                 console.log(error);
             }
-        }
+        };
         fetchAppliedJobs();
-    },[])
+    }, [user]);
 };
 export default useGetAppliedJobs;

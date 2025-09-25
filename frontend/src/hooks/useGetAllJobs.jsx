@@ -8,7 +8,7 @@ const useGetAllJobs = () => {
     const dispatch = useDispatch();
     const { searchedQuery } = useSelector(store => store.job);
     const { user } = useSelector(store => store.auth);
-    useEffect(()=>{
+    useEffect(() => {
         const fetchAllJobs = async () => {
             try {
                 const config = {
@@ -24,9 +24,9 @@ const useGetAllJobs = () => {
             } catch (error) {
                 console.log(error);
             }
-        }
+        };
         fetchAllJobs();
-    },[])
+    }, [user, searchedQuery]);
 }
 
 export default useGetAllJobs
